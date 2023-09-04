@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,8 +12,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js" defer></script>
 </head>
@@ -25,25 +24,25 @@
                 <p class="title-bill">Bill</p>
                 <div class="to-pay insert-box">
                     <span class="iconify" data-icon="ic:round-attach-money"></span>
-                    <input type="number" name="Bill" class="insert-value">
+                    <input type="number" name="Bill" class="insert-value" data-bill>
                 </div>
             </div>
             <div class="bill">
                 <p class="title-bill">Select Tip %</p>
                 <div class="porcents">
-                    <div class="tip">5%</div>
-                    <div class="tip">10%</div>
-                    <div class="tip">15%</div>
-                    <div class="tip">25%</div>
-                    <div class="tip">50%</div>
-                    <div class="tip">Custom</div>
+                    <button class="tip" data-tip-button>5%</button>
+                    <button class="tip" data-tip-button>10%</button>
+                    <button class="tip" data-tip-button>15%</button>
+                    <button class="tip" data-tip-button>25%</button>
+                    <button class="tip" data-tip-button>50%</button>
+                    <button class="tip" data-tip-button>Custom</button>
                 </div>
             </div>
             <div class="bill">
                 <p class="title-bill">Number of People</p>
                 <div class="waiterperson insert-box">
                     <span class="iconify" data-icon="material-symbols:person-rounded"></span>
-                    <input type="number" name="people" class="insert-value">
+                    <input type="number" name="people" class="insert-value" data-people>
                 </div>
             </div>
         </section>
@@ -54,17 +53,17 @@
                         <p class="title-values">Tip Amount</p>
                         <p class="subtitle-bill">/ person</p>
                     </div>
-                    <div class="amount-value">R$12,34</div>
+                    <div class="amount-value" data-amount-value>R$12,34</div>
                 </div>
                 <div class="total">
                     <div class="total-text">
                         <p class="title-values">Total</p>
                         <p class="subtitle-bill">/ person</p>
                     </div>
-                    <div class="total-value">R$123,45</div>
+                    <div class="total-value" data-total-value>R$123,45</div>
                 </div>
             </div>
-            <button type="reset">Reset</button>
+            <button type="reset" class="reset-button" data-reset-button>Reset</button>
         </section>
     </div>
 </body>

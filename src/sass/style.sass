@@ -4,10 +4,10 @@
 body
     background: variables.$background
     width: 100vw
+    max-width: 90%
     height: 100vh
-    display: flex
-    justify-content: center
-    align-items: center
+    @include mixins.flex-center
+    margin: 0 auto
 
     .title-bill
         @include mixins.title-bill
@@ -20,12 +20,12 @@ body
     place-items: center
     grid-template-columns: repeat(2, 1fr)
     width: 57.5rem
-    height: 30.0625rem
+    height: auto
     background: variables.$light900
     border-radius: 1.5625rem
     padding: 2rem
     gap: 1.875rem
-    box-shadow: 0px 32px 32px 0px rgba(0, 0, 0, 0.20), 0px 10px 15px 0px rgba(0, 0, 0, 0.15), 0px -8px 12px 0px rgba(0, 0, 0, 0.15) inset, 0px 8px 12px 0px #FFF inset
+    box-shadow: 0px 32px 32px rgba(0, 0, 0, 0.20), 0px 10px 15px rgba(0, 0, 0, 0.2), 0px -8px 12px rgba(0, 0, 0, 0.25) inset, 0px 8px 12px #FFF inset
 
     #insert
         @include mixins.grid
@@ -36,12 +36,44 @@ body
 
         .bill
             @include mixins.flex-column
-            gap: 1rem
+            gap: 0.5rem
             width: 100%
 
             .porcents
                 @include mixins.grid
-                grid-template: repeat(2, 1fr)/repeat(3, 1fr)
+                grid-template: repeat(2, 3rem)/repeat(3, 1fr)
+                gap: 1rem
+
+                .tip
+                    width: 100%
+                    height: 100%
+                    @include mixins.flex-center
+                    background: variables.$dark200
+                    border: none
+                    border-radius: 0.3125rem
+                    font-family: 'Quicksand', sans-serif
+                    font-size: variables.$font-insert
+                    color: variables.$white
+                    transition: .15s ease-in-out
+
+                .tip:last-child
+                    @include mixins.last-tip
+
+                .tip:hover
+                    cursor: pointer
+                    filter: brightness(1.2)
+
+            .insert-box
+                @include mixins.insert-box
+
+                .iconify
+                    font-size: 1.2rem
+                    color: variables.$title-bill
+
+                .insert-value
+                    @include mixins.input-box
+                    font-size: variables.$font-insert
+                    color: variables.$dark200
 
     #result
         width: 100%
@@ -50,4 +82,36 @@ body
         flex-direction: column
         justify-content: space-between
         padding: 2.5rem
-        
+        background: variables.$dark200
+        border-radius: 0.9375rem
+
+        .result-values
+            @include mixins.flex-column
+            gap: 2rem
+
+            .amount,
+            .total
+                @include mixins.flex
+                justify-content: space-between
+                align-items: center
+                width: 100%
+                height: 100%
+
+                .subtitle-bill
+                    @include mixins.subtitle-values
+
+                .amount-value,
+                .total-value
+                    font-size: variables.$font-results
+                    font-weight: 600
+                    color: variables.$active
+
+        .reset-button
+            height: 3rem
+            border: none
+            background: variables.$active
+            border-radius: 0.3125rem
+            font-family: 'Space Mono', monospace
+            font-size: variables.$font-button
+            font-weight: 700
+            text-transform: uppercase
