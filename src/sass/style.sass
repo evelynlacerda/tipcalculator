@@ -56,12 +56,12 @@ body
                     color: variables.$white
                     transition: .15s ease-in-out
 
-                .tip:last-child
-                    @include mixins.last-tip
+                    &:last-child
+                        @include mixins.last-tip
 
-                .tip:hover
-                    cursor: pointer
-                    filter: brightness(1.2)
+                    &:hover
+                        cursor: pointer
+                        filter: brightness(1.2)
 
             .insert-box
                 @include mixins.insert-box
