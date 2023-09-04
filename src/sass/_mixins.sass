@@ -1,3 +1,29 @@
+@use 'variables'
+    
+@mixin grid
+    display: grid
+
+@mixin flex-column
+    display: flex
+    flex-direction: column
+
 @mixin flex
     display: flex
 
+@mixin title-bill
+    font-size: variables.$font-title
+    font-weight: 700
+    color: variables.$title-bill
+
+@mixin title-values
+    font-size: variables.$font-title
+    font-weight: 700
+    color: variables.$white
+
+@mixin subtitle-values
+    font-size: variables.$font-subtitle
+    font-weight: 400
+    color: variables.$title-bill
+
+@mixin insert-value
+    

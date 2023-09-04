@@ -23,9 +23,9 @@
         <section id="insert">
             <div class="bill">
                 <p class="title-bill">Bill</p>
-                <div class="to-pay">
+                <div class="to-pay insert-box">
                     <span class="iconify" data-icon="ic:round-attach-money"></span>
-                    <input type="number" name="Bill" id="bill-to-pay">
+                    <input type="number" name="Bill" class="insert-value">
                 </div>
             </div>
             <div class="bill">
@@ -41,26 +41,28 @@
             </div>
             <div class="bill">
                 <p class="title-bill">Number of People</p>
-                <div class="waiterperson">
+                <div class="waiterperson insert-box">
                     <span class="iconify" data-icon="material-symbols:person-rounded"></span>
-                    <input type="number" name="people" id="waiters">
+                    <input type="number" name="people" class="insert-value">
                 </div>
             </div>
         </section>
         <section id="result">
-            <div class="amount">
-                <div class="amount-text">
-                    <p>Tip Amount</p>
-                    <p>/ person</p>
+            <div class="result-values">
+                <div class="amount">
+                    <div class="amount-text">
+                        <p class="title-values">Tip Amount</p>
+                        <p class="subtitle-bill">/ person</p>
+                    </div>
+                    <div class="amount-value">R$12,34</div>
                 </div>
-                <div class="amount-value">R$12,34</div>
-            </div>
-            <div class="total">
-                <div class="total-text">
-                    <p>Total</p>
-                    <p>/ person</p>
+                <div class="total">
+                    <div class="total-text">
+                        <p class="title-values">Total</p>
+                        <p class="subtitle-bill">/ person</p>
+                    </div>
+                    <div class="total-value">R$123,45</div>
                 </div>
-                <div class="total-value">R$123,45</div>
             </div>
             <button type="reset">Reset</button>
         </section>

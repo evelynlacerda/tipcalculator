@@ -9,12 +9,45 @@ body
     justify-content: center
     align-items: center
 
+    .title-bill
+        @include mixins.title-bill
+
+    .title-values
+        @include mixins.title-values
+
 #box-tip
-    @include mixins.flex
+    @include mixins.grid
+    place-items: center
+    grid-template-columns: repeat(2, 1fr)
     width: 57.5rem
     height: 30.0625rem
     background: variables.$light900
     border-radius: 1.5625rem
     padding: 2rem
-    align-items: center
-    justify-content: center
+    gap: 1.875rem
+    box-shadow: 0px 32px 32px 0px rgba(0, 0, 0, 0.20), 0px 10px 15px 0px rgba(0, 0, 0, 0.15), 0px -8px 12px 0px rgba(0, 0, 0, 0.15) inset, 0px 8px 12px 0px #FFF inset
+
+    #insert
+        @include mixins.grid
+        grid-template: repeat(3, auto)/repeat(1, 100%)
+        gap: 2.5rem
+        width: 100%
+        padding: 1rem
+
+        .bill
+            @include mixins.flex-column
+            gap: 1rem
+            width: 100%
+
+            .porcents
+                @include mixins.grid
+                grid-template: repeat(2, 1fr)/repeat(3, 1fr)
+
+    #result
+        width: 100%
+        height: 100%
+        @include mixins.flex
+        flex-direction: column
+        justify-content: space-between
+        padding: 2.5rem
+        
