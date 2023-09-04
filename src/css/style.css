@@ -1,0 +1,21 @@
+body {
+  background: #7E827A;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#box-tip {
+  display: flex;
+  width: 57.5rem;
+  height: 30.0625rem;
+  background: #F8F8F8;
+  border-radius: 1.5625rem;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=style.css.map */

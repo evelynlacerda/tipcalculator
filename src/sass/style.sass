@@ -1,0 +1,20 @@
+@use 'variables'
+@use 'mixins'
+
+body
+    background: variables.$background
+    width: 100vw
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+
+#box-tip
+    @include mixins.flex
+    width: 57.5rem
+    height: 30.0625rem
+    background: variables.$light900
+    border-radius: 1.5625rem
+    padding: 2rem
+    align-items: center
+    justify-content: center

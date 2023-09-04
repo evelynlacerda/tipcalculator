@@ -1,19 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tip Calculator App | Frontendmentor</title>
 
     <link rel="stylesheet" href="./src/css/reset.css">
-    <link rel="stylesheet" href="./src/css/root.css">
     <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/responsive.css">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js" defer></script>
 </head>
-<body>
 
-    
-    
+<body>
+    <div id="box-tip">
+        <section id="insert">
+            <div class="bill">
+                <p class="title-bill">Bill</p>
+                <div class="to-pay">
+                    <span class="iconify" data-icon="ic:round-attach-money"></span>
+                    <input type="number" name="Bill" id="bill-to-pay">
+                </div>
+            </div>
+            <div class="bill">
+                <p class="title-bill">Select Tip %</p>
+                <div class="porcents">
+                    <div class="tip">5%</div>
+                    <div class="tip">10%</div>
+                    <div class="tip">15%</div>
+                    <div class="tip">25%</div>
+                    <div class="tip">50%</div>
+                    <div class="tip">Custom</div>
+                </div>
+            </div>
+            <div class="bill">
+                <p class="title-bill">Number of People</p>
+                <div class="waiterperson">
+                    <span class="iconify" data-icon="material-symbols:person-rounded"></span>
+                    <input type="number" name="people" id="waiters">
+                </div>
+            </div>
+        </section>
+        <section id="result">
+            <div class="amount">
+                <div class="amount-text">
+                    <p>Tip Amount</p>
+                    <p>/ person</p>
+                </div>
+                <div class="amount-value">R$12,34</div>
+            </div>
+            <div class="total">
+                <div class="total-text">
+                    <p>Total</p>
+                    <p>/ person</p>
+                </div>
+                <div class="total-value">R$123,45</div>
+            </div>
+            <button type="reset">Reset</button>
+        </section>
+    </div>
 </body>
+
 </html>
