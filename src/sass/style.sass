@@ -146,24 +146,29 @@ body
 
 // RESPONSIVE
 @include mixins.tablet
-    // body
-    //     max-width: 100%
-
-    #box-tip
-        width: 575px
-        grid-template: repeat(2, auto)/repeat(1, auto)
-
-@include mixins.mobile
     body
         max-width: 100%
         height: 100%
 
     #box-tip
+        grid-template: repeat(2, auto)/repeat(1, auto)
+        gap: 3.5rem
+        width: 575px
+        margin: 3rem 2rem
+
+        #insert
+            gap: 2rem
+
+        #result
+            gap: 4rem
+
+@include mixins.mobile
+    #box-tip
         max-width: 100%
         height: 100%
         grid-template: repeat(2, auto)/repeat(1, 100%)
         gap: 3.5rem
-        margin-top: 80px
+        margin: 80px 0 0
         padding: 1rem
         box-shadow: none
         border-radius: 1.5625rem 1.5625rem 0 0
@@ -171,7 +176,6 @@ body
         #insert
             @include mixins.flex-column
             height: auto
-            gap: 2rem
             padding: 0
 
             .bill
@@ -202,7 +206,6 @@ body
         #result
             height: auto
             justify-content: start
-            gap: 4rem
 
             .result-values
                 gap: 1.5rem
