@@ -23,7 +23,7 @@
         <section id="insert">
             <div class="bill">
                 <p class="title-bill">Bill</p>
-                <div class="to-pay insert-box">
+                <div class="insert-box">
                     <span class="iconify" data-icon="ic:round-attach-money"></span>
                     <input type="number" name="Bill" class="insert-value" data-bill>
                 </div>
@@ -36,12 +36,12 @@
                     <button class="tip" data-tip-button>15%</button>
                     <button class="tip" data-tip-button>25%</button>
                     <button class="tip" data-tip-button>50%</button>
-                    <button class="tip" data-custom-tip>Custom</button>
+                    <input type="number" name="tip" id="custom-tip" placeholder="CUSTOM">
                 </div>
             </div>
             <div class="bill">
                 <p class="title-bill">Number of People</p>
-                <div class="waiterperson insert-box">
+                <div class="insert-box">
                     <span class="iconify" data-icon="material-symbols:person-rounded"></span>
                     <input type="number" name="people" class="insert-value" data-people>
                 </div>
@@ -54,14 +54,14 @@
                         <p class="title-values">Tip Amount</p>
                         <p class="subtitle-bill">/ person</p>
                     </div>
-                    <div class="amount-value" data-amount-value>R$12,34</div>
+                    <div class="amount-value" data-amount-value>R$ 12,34</div>
                 </div>
                 <div class="total">
                     <div class="total-text">
                         <p class="title-values">Total</p>
                         <p class="subtitle-bill">/ person</p>
                     </div>
-                    <div class="total-value" data-total-value>R$123,45</div>
+                    <div class="total-value" data-total-value>R$ 123,45</div>
                 </div>
             </div>
             <button type="reset" class="reset-button" data-reset-button>Reset</button>

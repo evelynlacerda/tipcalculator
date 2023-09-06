@@ -1,14 +1,8 @@
 @use 'variables'
 
-@mixin grid
-    display: grid
-
 @mixin flex-column
     display: flex
     flex-direction: column
-
-@mixin flex
-    display: flex
 
 @mixin flex-center
     display: flex
@@ -25,32 +19,21 @@
     font-weight: 600
     color: variables.$white
 
-@mixin subtitle-values
-    font-size: variables.$font-subtitle
-    font-weight: 400
-    color: variables.$title-bill
-
-@mixin last-tip
-    background: variables.$light800
-    color: variables.$title-bill
-    font-size: 1rem
-    text-transform: uppercase
-    font-weight: 700
-
-@mixin insert-box
-    display: flex
-    align-items: center
-    gap: 1rem
-    height: 3rem
-    padding: 0 .625rem
-    background: variables.$light800
-    border-radius: 0.3125rem
-
-@mixin input-box
-    border: none
-    background: none
-    text-align: right
+@mixin tips
     width: 100%
-    outline: none
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    border: none
+    border-radius: 0.3125rem
     font-family: 'Quicksand', sans-serif
-    font-weight: 700
+    
+    
+@mixin tablet
+    @media (max-width: 820px)
+        @content
+
+@mixin mobile
+    @media (max-width: 475px)
+        @content

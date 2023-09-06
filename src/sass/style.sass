@@ -15,8 +15,12 @@ body
     .title-values
         @include mixins.title-values
 
+        @include mixins.mobile
+            font-size: variables.$font-title-mobile
+            font-weight: 500
+
 #box-tip
-    @include mixins.grid
+    display: grid
     place-items: center
     grid-template-columns: repeat(2, 1fr)
     width: 57.5rem
@@ -25,10 +29,10 @@ body
     border-radius: 1.5625rem
     padding: 2rem
     gap: 1.875rem
-    box-shadow: 0px 32px 32px rgba(0, 0, 0, 0.20), 0px 10px 15px rgba(0, 0, 0, 0.2), 0px -8px 12px rgba(0, 0, 0, 0.25) inset, 0px 8px 12px #FFF inset
+    box-shadow: 0px 32px 32px 0px rgba(0, 0, 0, 0.30), 0px 10px 15px 0px rgba(0, 0, 0, 0.25), 0px -8px 15px 0px rgba(0, 0, 0, 0.5) inset, 0px 8px 12px 0px #FFF inset
 
     #insert
-        @include mixins.grid
+        display: grid
         grid-template: repeat(3, auto)/repeat(1, 100%)
         gap: 2.5rem
         width: 100%
@@ -40,45 +44,67 @@ body
             width: 100%
 
             .porcents
-                @include mixins.grid
+                display: grid
                 grid-template: repeat(2, 3rem)/repeat(3, 1fr)
                 gap: 1rem
 
                 .tip
-                    width: 100%
-                    height: 100%
-                    @include mixins.flex-center
+                    @include mixins.tips
                     background: variables.$dark200
-                    border: none
-                    border-radius: 0.3125rem
-                    font-family: 'Quicksand', sans-serif
                     font-size: variables.$font-insert
                     color: variables.$white
                     transition: .15s ease-in-out
-
-                    &:last-child
-                        @include mixins.last-tip
 
                     &:hover
                         cursor: pointer
                         filter: brightness(1.2)
 
+                input
+                    @include mixins.tips
+                    background: variables.$light800
+                    font-size: variables.$font-insert
+                    outline: none
+                    text-align: center
+                    font-weight: 600
+
+                    &::placeholder
+                        font-size: 1.2rem
+                        font-weight: 600
+
+                    &:focus
+                        background: variables.$active
+                        color: variables.$dark200
+
+                        &::placeholder
+                            color: transparent
+
             .insert-box
-                @include mixins.insert-box
+                display: flex
+                align-items: center
+                gap: 1rem
+                height: 3rem
+                padding: 0 .625rem
+                background: variables.$light800
+                border-radius: 0.3125rem
 
                 .iconify
                     font-size: 1.2rem
                     color: variables.$title-bill
 
                 .insert-value
-                    @include mixins.input-box
+                    width: 100%
+                    background: none
+                    font-family: 'Quicksand', sans-serif
                     font-size: variables.$font-insert
-                    color: variables.$dark200
+                    font-weight: 700
+                    text-align: right
+                    border: none
+                    outline: none
 
     #result
         width: 100%
         height: 100%
-        @include mixins.flex
+        display: flex
         flex-direction: column
         justify-content: space-between
         padding: 2.5rem
@@ -91,14 +117,16 @@ body
 
             .amount,
             .total
-                @include mixins.flex
+                display: flex
                 justify-content: space-between
                 align-items: center
                 width: 100%
                 height: 100%
 
                 .subtitle-bill
-                    @include mixins.subtitle-values
+                    font-size: variables.$font-subtitle
+                    font-weight: 400
+                    color: variables.$title-bill
 
                 .amount-value,
                 .total-value
@@ -115,3 +143,86 @@ body
             font-size: variables.$font-button
             font-weight: 700
             text-transform: uppercase
+
+// RESPONSIVE
+@include mixins.tablet
+    // body
+    //     max-width: 100%
+
+    #box-tip
+        width: 575px
+        grid-template: repeat(2, auto)/repeat(1, auto)
+
+@include mixins.mobile
+    body
+        max-width: 100%
+        height: 100%
+
+    #box-tip
+        max-width: 100%
+        height: 100%
+        grid-template: repeat(2, auto)/repeat(1, 100%)
+        gap: 3.5rem
+        margin-top: 80px
+        padding: 1rem
+        box-shadow: none
+        border-radius: 1.5625rem 1.5625rem 0 0
+
+        #insert
+            @include mixins.flex-column
+            height: auto
+            gap: 2rem
+            padding: 0
+
+            .bill
+                .porcents
+                    grid-template: repeat(2, auto)/repeat(3, 1fr)
+                    gap: 0.5rem
+
+                    .tip
+                        font-size: variables.$font-insert-mobile
+                        font-weight: 500
+                        padding: 8px 0
+
+                    input
+                        font-size: variables.$font-input
+
+                        &::placeholder
+                            font-size: 0.875rem
+                            font-weight: 600
+
+                .insert-box
+                    height: auto
+                    padding: .5rem .625rem
+
+                    .insert-value
+                        font-size: variables.$font-insert-mobile
+                        font-weight: 500
+
+        #result
+            height: auto
+            justify-content: start
+            gap: 4rem
+
+            .result-values
+                gap: 1.5rem
+
+                .amount,
+                .total
+                    flex-direction: column
+                    gap: .5rem
+
+                    .amount-text,
+                    .total-text
+                        display: flex
+                        gap: .5rem
+                        align-items: baseline
+
+                    .amount-value,
+                    .total-value
+                        font-size: 1.5rem
+
+            .reset-button
+                height: auto
+                font-size: variables.$font-button-mobile
+                padding: 0.375rem 0
