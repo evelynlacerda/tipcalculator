@@ -2,11 +2,13 @@
 @use 'mixins'
 
 body
-    background: variables.$background
     width: 100vw
     max-width: 90%
     height: 100vh
     @include mixins.flex-center
+    flex-direction: column
+    gap: 4.5rem
+    background: variables.$background
     margin: 0 auto
 
     .title-bill
@@ -16,14 +18,22 @@ body
         @include mixins.title-values
 
         @include mixins.mobile
-            font-size: variables.$font-title-mobile
+            font-size: variables.$font-title-form-mobile
             font-weight: 500
+
+#header
+    .title
+        color: variables.$light800
+        font-family: 'Karla', sans-serif
+        text-transform: uppercase
+        letter-spacing: 0.875rem
 
 #box-tip
     display: grid
     place-items: center
     grid-template-columns: repeat(2, 1fr)
     width: 57.5rem
+    max-width: 95%
     height: auto
     background: variables.$light900
     border-radius: 1.5625rem
@@ -128,8 +138,12 @@ body
                     font-weight: 400
                     color: variables.$title-bill
 
+                    @include mixins.mobile
+                        font-size: variables.$font-subtitle-mobile
+
                 .amount-value,
                 .total-value
+                    font-family: 'Karla', sans-serif
                     font-size: variables.$font-results
                     font-weight: 600
                     color: variables.$active
@@ -142,19 +156,23 @@ body
             font-family: 'Space Mono', monospace
             font-size: variables.$font-button
             font-weight: 700
+            color: variables.$dark200
             text-transform: uppercase
 
 // RESPONSIVE
 @include mixins.tablet
     body
-        width: 100%
-        height: 100%
+        max-width: 100%
+        height: auto
+
+    #header
+        margin: 4rem 0 0
 
     #box-tip
         grid-template: repeat(2, auto)/repeat(1, auto)
         gap: 3.5rem
         width: 575px
-        margin: 3rem 2rem
+        margin: 0 0 4rem
 
         #insert
             gap: 2rem
@@ -163,20 +181,31 @@ body
             gap: 4rem
 
 @include mixins.mobile
+    body
+        gap: 2rem
+
+    #header
+        display: block
+        margin: 2.5rem 0 0
+        
+        .title
+            font-size: 1.5rem
+            letter-spacing: 0.5rem
+
     #box-tip
-        width: 100%
+        max-width: 100%
         height: 100%
         grid-template: repeat(2, auto)/repeat(1, 100%)
-        gap: 3.5rem
-        margin: 80px 0 0
-        padding: 1rem
+        gap: 3rem
+        margin: 0
+        padding: .5rem 0 0
         box-shadow: none
         border-radius: 1.5625rem 1.5625rem 0 0
 
         #insert
             @include mixins.flex-column
             height: auto
-            padding: 0
+            padding: 1rem
 
             .bill
                 .porcents
@@ -205,20 +234,14 @@ body
         #result
             height: auto
             justify-content: start
+            background: variables.$background
+            border-radius: 0.9375rem 0.9375rem 0 0
 
             .result-values
                 gap: 1.5rem
 
                 .amount,
                 .total
-                    flex-direction: column
-                    gap: .5rem
-
-                    .amount-text,
-                    .total-text
-                        display: flex
-                        gap: .5rem
-                        align-items: baseline
 
                     .amount-value,
                     .total-value

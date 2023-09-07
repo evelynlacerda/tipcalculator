@@ -12,15 +12,18 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js" defer></script>
     <script src="./src/js/script.js" defer></script>
 </head>
 
 <body>
-    <div id="box-tip">
-        <section id="insert">
+    <header id="header">
+        <h1 class="title">Splitter</h1>
+    </header>
+    <section id="box-tip">
+        <form id="insert">
             <div class="bill">
                 <p class="title-bill">Bill</p>
                 <div class="insert-box">
@@ -46,7 +49,7 @@
                     <input type="number" name="people" class="insert-value" data-people>
                 </div>
             </div>
-        </section>
+        </form>
         <section id="result">
             <div class="result-values">
                 <div class="amount">
@@ -66,7 +69,7 @@
             </div>
             <button type="reset" class="reset-button" data-reset-button>Reset</button>
         </section>
-    </div>
+    </section>
 </body>
 
 </html>
