@@ -176,7 +176,19 @@ body .title-values {
   font-weight: 600;
   color: #E3CDA4;
 }
-#box-tip #result .reset-button {
+#box-tip #result .buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+#box-tip #result .buttons .submit-button,
+#box-tip #result .buttons .reset-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 0;
   height: 3rem;
   border: none;
   background: #E3CDA4;

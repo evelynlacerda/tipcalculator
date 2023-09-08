@@ -148,16 +148,26 @@ body
                     font-weight: 600
                     color: variables.$active
 
-        .reset-button
-            height: 3rem
-            border: none
-            background: variables.$active
-            border-radius: 0.3125rem
-            font-family: 'Space Mono', monospace
-            font-size: variables.$font-button
-            font-weight: 700
-            color: variables.$dark200
-            text-transform: uppercase
+        .buttons
+            display: flex
+            justify-content: space-between
+            gap: 1rem
+            width: 100%
+
+            .submit-button,
+            .reset-button
+                @include mixins.flex-center
+                flex-grow: 1
+                flex-basis: 0
+                height: 3rem
+                border: none
+                background: variables.$active
+                border-radius: 0.3125rem
+                font-family: 'Space Mono', monospace
+                font-size: variables.$font-button
+                font-weight: 700
+                color: variables.$dark200
+                text-transform: uppercase
 
 // RESPONSIVE
 @include mixins.tablet

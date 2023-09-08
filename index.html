@@ -12,7 +12,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js" defer></script>
     <script src="./src/js/script.js" defer></script>
@@ -34,11 +36,11 @@
             <div class="bill">
                 <p class="title-bill">Select Tip %</p>
                 <div class="porcents">
-                    <button class="tip" data-tip-button>5%</button>
-                    <button class="tip" data-tip-button>10%</button>
-                    <button class="tip" data-tip-button>15%</button>
-                    <button class="tip" data-tip-button>25%</button>
-                    <button class="tip" data-tip-button>50%</button>
+                    <button type="button" class="tip" data-tip-button>5%</button>
+                    <button type="button" class="tip" data-tip-button>10%</button>
+                    <button type="button" class="tip" data-tip-button>15%</button>
+                    <button type="button" class="tip" data-tip-button>25%</button>
+                    <button type="button" class="tip" data-tip-button>50%</button>
                     <input type="number" name="tip" id="custom-tip" placeholder="CUSTOM">
                 </div>
             </div>
@@ -67,7 +69,10 @@
                     <div class="total-value" data-total-value>R$ 123,45</div>
                 </div>
             </div>
-            <button type="reset" class="reset-button" data-reset-button>Reset</button>
+            <div class="buttons">
+                <button type="submit" class="submit-button" data-calc-button>Calculate</button>
+                <button type="reset" class="reset-button" data-reset-button>Reset</button>
+            </div>
         </section>
     </section>
 </body>
