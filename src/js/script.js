@@ -7,14 +7,20 @@ const total = document.querySelector('[data-total-value]');
 const calcButton = document.querySelector('[data-calc-button]');
 const resetButton = document.querySelector('[data-reset-button]');
 
-bill.value = "0.00"
+bill.value = ""
 people.value = "0"
 amount.innerText = "R$ " + (0,0).toFixed(2)
 total.innerText = "R$ " + (0,0).toFixed(2)
 
+let billValue = 0.0;
+let peopleValue = 0;
+let tipValue = 0.05;
 
+function billFun() {
+    billValue = parseFloat(bill.value);
 
-
+    calculateTip();
+}
 
 function reset() {
     bill.value = "0.00"

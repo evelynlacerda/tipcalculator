@@ -83,6 +83,11 @@ body .title-values {
   cursor: pointer;
   filter: brightness(1.2);
 }
+#box-tip #insert .bill .porcents .active {
+  background: #E3CDA4;
+  color: #2F343B;
+  font-weight: 600;
+}
 #box-tip #insert .bill .porcents input {
   width: 100%;
   height: 100%;
