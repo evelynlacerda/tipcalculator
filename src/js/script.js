@@ -2,16 +2,29 @@ const bill = document.querySelector('[data-bill]');
 const tips = document.querySelectorAll('[data-tip-button]');
 const customTip = document.querySelector('[data-custom-tip]');
 const people = document.querySelector('[data-people]');
-const amountValue = document.querySelector('[data-amount-value]');
-const totalValue = document.querySelector('[data-total-value]');
+const amount = document.querySelector('[data-amount-value]');
+const total = document.querySelector('[data-total-value]');
 const calcButton = document.querySelector('[data-calc-button]');
 const resetButton = document.querySelector('[data-reset-button]');
 
-let billvalue = 0
+bill.value = "0.00"
+people.value = "0"
+amount.innerText = "R$ " + (0,0).toFixed(2)
+total.innerText = "R$ " + (0,0).toFixed(2)
 
-function billValue () {
-    
+
+
+
+
+function reset() {
+    bill.value = "0.00"
+    people.value = "0"
+    amount.innerText = "R$ " + (0,0).toFixed(2)
+    total.innerText = "R$ " + (0,0).toFixed(2)
 }
+
+resetButton.addEventListener('click', reset);
+
 
 
 
