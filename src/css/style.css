@@ -41,7 +41,7 @@ body .title-values {
   width: 57.5rem;
   max-width: 95%;
   height: auto;
-  background: #F5F5F5;
+  background: #f5f5f5;
   border-radius: 1.5625rem;
   padding: 2rem;
   gap: 1.875rem;
@@ -54,18 +54,29 @@ body .title-values {
   width: 100%;
   padding: 1rem;
 }
-#box-tip #insert .bill {
+#box-tip #insert .bill-value, #box-tip #insert .bill-tips, #box-tip #insert .bill-people {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
 }
-#box-tip #insert .bill .porcents {
+#box-tip #insert .bill-value .titles, #box-tip #insert .bill-tips .titles, #box-tip #insert .bill-people .titles {
+  display: flex;
+  justify-content: space-between;
+}
+#box-tip #insert .bill-value .titles .alert-bill, #box-tip #insert .bill-value .titles .alert-people, #box-tip #insert .bill-tips .titles .alert-bill, #box-tip #insert .bill-tips .titles .alert-people, #box-tip #insert .bill-people .titles .alert-bill, #box-tip #insert .bill-people .titles .alert-people {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+  color: red;
+  font-weight: 600;
+}
+#box-tip #insert .bill-value .porcents, #box-tip #insert .bill-tips .porcents, #box-tip #insert .bill-people .porcents {
   display: grid;
   grid-template: repeat(2, 3rem)/repeat(3, 1fr);
   gap: 1rem;
 }
-#box-tip #insert .bill .porcents .tip {
+#box-tip #insert .bill-value .porcents .tip, #box-tip #insert .bill-tips .porcents .tip, #box-tip #insert .bill-people .porcents .tip {
   width: 100%;
   height: 100%;
   display: flex;
@@ -79,16 +90,16 @@ body .title-values {
   color: #FFFFFF;
   transition: 0.15s ease-in-out;
 }
-#box-tip #insert .bill .porcents .tip:hover {
+#box-tip #insert .bill-value .porcents .tip:hover, #box-tip #insert .bill-tips .porcents .tip:hover, #box-tip #insert .bill-people .porcents .tip:hover {
   cursor: pointer;
   filter: brightness(1.2);
 }
-#box-tip #insert .bill .porcents .active {
+#box-tip #insert .bill-value .porcents .active, #box-tip #insert .bill-tips .porcents .active, #box-tip #insert .bill-people .porcents .active {
   background: #E3CDA4;
   color: #2F343B;
   font-weight: 600;
 }
-#box-tip #insert .bill .porcents input {
+#box-tip #insert .bill-value .porcents input, #box-tip #insert .bill-tips .porcents input, #box-tip #insert .bill-people .porcents input {
   width: 100%;
   height: 100%;
   display: flex;
@@ -103,18 +114,18 @@ body .title-values {
   text-align: center;
   font-weight: 600;
 }
-#box-tip #insert .bill .porcents input::placeholder {
+#box-tip #insert .bill-value .porcents input::placeholder, #box-tip #insert .bill-tips .porcents input::placeholder, #box-tip #insert .bill-people .porcents input::placeholder {
   font-size: 1.2rem;
   font-weight: 600;
 }
-#box-tip #insert .bill .porcents input:focus {
+#box-tip #insert .bill-value .porcents input:focus, #box-tip #insert .bill-tips .porcents input:focus, #box-tip #insert .bill-people .porcents input:focus {
   background: #E3CDA4;
   color: #2F343B;
 }
-#box-tip #insert .bill .porcents input:focus::placeholder {
+#box-tip #insert .bill-value .porcents input:focus::placeholder, #box-tip #insert .bill-tips .porcents input:focus::placeholder, #box-tip #insert .bill-people .porcents input:focus::placeholder {
   color: transparent;
 }
-#box-tip #insert .bill .insert-box {
+#box-tip #insert .bill-value .insert-box, #box-tip #insert .bill-tips .insert-box, #box-tip #insert .bill-people .insert-box {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -123,11 +134,11 @@ body .title-values {
   background: #E0E0E0;
   border-radius: 0.3125rem;
 }
-#box-tip #insert .bill .insert-box .iconify {
+#box-tip #insert .bill-value .insert-box .iconify, #box-tip #insert .bill-tips .insert-box .iconify, #box-tip #insert .bill-people .insert-box .iconify {
   font-size: 1.2rem;
   color: #7E827A;
 }
-#box-tip #insert .bill .insert-box .insert-value {
+#box-tip #insert .bill-value .insert-box .insert-value, #box-tip #insert .bill-tips .insert-box .insert-value, #box-tip #insert .bill-people .insert-box .insert-value {
   width: 100%;
   background: none;
   font-family: "Quicksand", sans-serif;
@@ -181,19 +192,11 @@ body .title-values {
   font-weight: 600;
   color: #E3CDA4;
 }
-#box-tip #result .buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 100%;
-}
-#box-tip #result .buttons .submit-button,
-#box-tip #result .buttons .reset-button {
+#box-tip #result .reset-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
-  flex-basis: 0;
+  width: 100%;
   height: 3rem;
   border: none;
   background: #E3CDA4;
@@ -203,6 +206,9 @@ body .title-values {
   font-weight: 700;
   color: #2F343B;
   text-transform: uppercase;
+}
+#box-tip #result .reset-button:active {
+  background: #d4b477;
 }
 
 @media (max-width: 820px) {
@@ -254,26 +260,26 @@ body .title-values {
     height: auto;
     padding: 1rem;
   }
-  #box-tip #insert .bill .porcents {
+  #box-tip #insert .bill-value .porcents, #box-tip #insert .bill-tips .porcents, #box-tip #insert .bill-people .porcents {
     grid-template: repeat(2, 2.5rem)/repeat(3, 1fr);
     gap: 0.5rem;
   }
-  #box-tip #insert .bill .porcents .tip {
+  #box-tip #insert .bill-value .porcents .tip, #box-tip #insert .bill-tips .porcents .tip, #box-tip #insert .bill-people .porcents .tip {
     font-size: 1.125rem;
     font-weight: 500;
   }
-  #box-tip #insert .bill .porcents input {
+  #box-tip #insert .bill-value .porcents input, #box-tip #insert .bill-tips .porcents input, #box-tip #insert .bill-people .porcents input {
     font-size: 1.1rem;
   }
-  #box-tip #insert .bill .porcents input::placeholder {
+  #box-tip #insert .bill-value .porcents input::placeholder, #box-tip #insert .bill-tips .porcents input::placeholder, #box-tip #insert .bill-people .porcents input::placeholder {
     font-size: 0.875rem;
     font-weight: 600;
   }
-  #box-tip #insert .bill .insert-box {
+  #box-tip #insert .bill-value .insert-box, #box-tip #insert .bill-tips .insert-box, #box-tip #insert .bill-people .insert-box {
     height: auto;
     padding: 0.5rem 0.625rem;
   }
-  #box-tip #insert .bill .insert-box .insert-value {
+  #box-tip #insert .bill-value .insert-box .insert-value, #box-tip #insert .bill-tips .insert-box .insert-value, #box-tip #insert .bill-people .insert-box .insert-value {
     font-size: 1.125rem;
     font-weight: 500;
   }

@@ -48,10 +48,18 @@ body
         width: 100%
         padding: 1rem
 
-        .bill
+        .bill-value, .bill-tips, .bill-people
             @include mixins.flex-column
             gap: 0.5rem
             width: 100%
+
+            .titles
+                display: flex
+                justify-content: space-between
+
+                .alert-bill, .alert-people
+                    display: none
+                    @include mixins.alert
 
             .porcents
                 display: grid
@@ -153,26 +161,21 @@ body
                     font-weight: 600
                     color: variables.$active
 
-        .buttons
-            display: flex
-            justify-content: space-between
-            gap: 1rem
+        .reset-button
+            @include mixins.flex-center
             width: 100%
+            height: 3rem
+            border: none
+            background: variables.$active
+            border-radius: 0.3125rem
+            font-family: 'Space Mono', monospace
+            font-size: variables.$font-button
+            font-weight: 700
+            color: variables.$dark200
+            text-transform: uppercase
 
-            .submit-button,
-            .reset-button
-                @include mixins.flex-center
-                flex-grow: 1
-                flex-basis: 0
-                height: 3rem
-                border: none
-                background: variables.$active
-                border-radius: 0.3125rem
-                font-family: 'Space Mono', monospace
-                font-size: variables.$font-button
-                font-weight: 700
-                color: variables.$dark200
-                text-transform: uppercase
+            &:active
+                background: variables.$dark300
 
 // RESPONSIVE
 @include mixins.tablet
@@ -222,7 +225,7 @@ body
             height: auto
             padding: 1rem
 
-            .bill
+            .bill-value, .bill-tips, .bill-people
                 .porcents
                     grid-template: repeat(2, 2.5rem)/repeat(3, 1fr)
                     gap: 0.5rem

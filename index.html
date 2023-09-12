@@ -17,7 +17,7 @@
         rel="stylesheet">
 
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js" defer></script>
-    <script src="./src/js/script.js" defer></script>
+    <script src="./src/js/index.js" defer></script>
 </head>
 
 <body>
@@ -25,15 +25,20 @@
         <h1 class="title">Splitter</h1>
     </header>
     <section id="box-tip">
-        <form id="insert">
-            <div class="bill">
-                <p class="title-bill">Bill</p>
-                <div class="insert-box">
+        <section id="insert">
+            <div class="bill-value">
+                <div class="titles">
+                    <p class="title-bill">Bill</p>
+                    <p class="alert-bill" data-alert-bill>
+                        Please, enter a valid value <span class="iconify" data-icon="jam:alert"></span>
+                    </p>
+                </div>
+                <div class="insert-box" data-bill-box>
                     <span class="iconify" data-icon="ic:round-attach-money"></span>
                     <input type="number" name="Bill" class="insert-value" data-bill>
                 </div>
             </div>
-            <div class="bill">
+            <div class="bill-tips">
                 <p class="title-bill">Select Tip %</p>
                 <div class="porcents">
                     <button type="button" class="tip" data-tip-button>5%</button>
@@ -41,17 +46,21 @@
                     <button type="button" class="tip" data-tip-button>15%</button>
                     <button type="button" class="tip" data-tip-button>25%</button>
                     <button type="button" class="tip" data-tip-button>50%</button>
-                    <input type="number" name="tip" id="custom-tip" placeholder="CUSTOM">
+                    <input type="number" name="tip" id="custom-tip" placeholder="CUSTOM" data-tip-custom>
                 </div>
             </div>
-            <div class="bill">
-                <p class="title-bill">Number of People</p>
-                <div class="insert-box">
+            <div class="bill-people">
+                <div class="titles">
+                    <p class="title-bill">People</p>
+                    <p class="alert-people" data-alert-people>Please, enter a valid value <span class="iconify"
+                            data-icon="jam:alert"></span></p>
+                </div>
+                <div class="insert-box" data-people-box>
                     <span class="iconify" data-icon="material-symbols:person-rounded"></span>
                     <input type="number" name="people" class="insert-value" data-people>
                 </div>
             </div>
-        </form>
+        </section>
         <section id="result">
             <div class="result-values">
                 <div class="amount">
@@ -69,10 +78,7 @@
                     <div class="total-value" data-total-value></div>
                 </div>
             </div>
-            <form class="buttons">
-                <button type="submit" class="submit-button" data-calc-button>Calculate</button>
-                <button type="reset" class="reset-button" data-reset-button>Reset</button>
-            </form>
+            <button type="reset" class="reset-button" data-reset-button>Reset</button>
         </section>
     </section>
 </body>
